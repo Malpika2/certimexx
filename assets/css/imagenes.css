@@ -1,0 +1,11 @@
+img.imagen-centro{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	width:90px;
+	height:90px;
+
+}
