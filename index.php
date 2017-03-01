@@ -36,13 +36,11 @@
 <body>
     <!-- ******HEADER****** --> 
     <header id="header" class="header">  
-        <div class="container">       
+        <div class="container" >    
             <h1 class="logo">
                 <a class="scrollto" href="#myCarousel">
-				
-                    <img width="15%" style="display:block; padding:0% 0% 0% 5%"src="Imagenes/certimex-logo.png" alt="icon-certimex"/>
-                    <img width="19%" style="display:block-inline" src="Imagenes/certimex-slogan.png" alt="icon-certimex"/>
-					</a>
+                    <img width="15%" src="Imagenes/logo-certimex.png" alt="icon-certimex"/>
+				</a>
             </h1><!--//logo-->
             <nav class="main-nav navbar-right" role="navigation">
                 <div class="navbar-header">
@@ -89,7 +87,7 @@
         </div><!--//container-->
     </header><!--//header-->
     
-	    <div id="myCarousel" class="carousel slide" style="padding:0% 0% 0% 0%">
+	    <div id="myCarousel" class="carousel slide" style="padding:5% 0% 0% 0%">
         <!-- Indicators -->
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
@@ -103,13 +101,15 @@
 									$clase="\"item active\"";
 								}else{$clase="\"item\"";}
 								echo "<div class=$clase>";
-									echo "<div class=\"fill\" style=\"background-image:url(certimex/$fila[3]); background-size:100%; background-repeat: no-repeat; padding:25% 0% 0% 0%;></div>";
+									echo "<div class=\"fill\" style=\"background-image:url(certimex/$fila[3]); background-repeat: no-repeat; padding:0% 0% 0% 0%;></div>";
 									echo "<div class=\"carousel-caption\">";
-									echo "<div class=\"text-center\"  style=\"background-color:rgba(13, 13, 13, .5)\">";	
-										echo "<div style=\"background-color:rgba(13, 13, 13, .5)\"><h2 style=\"color:#0CE201\"><b>$fila[0]</b></br></br></h2></div>";
-										echo "<div ><h3 style=\"color:#FFFFFF\" text-align:justify;\">$fila[1]</h3>";
-										echo "<a class=\"btn btn-success \" href=\"$fila[2]\"> Saber más...</a></div></div>";
-								echo "</div>";
+									echo "<div class=\"text-center\"  style=\"padding:20% 0% 0% 0%;\">";	
+										echo "<div style=\"background-color:rgba(13, 13, 13, .4)\"><h2 style=\"color:#0CE201; padding-top:2%\"><b>$fila[0]</b></br></br></h2></div>";
+										echo "<div style=\"background-color:rgba(13, 13, 13, .3); color:#FFFFFF\" text-align:justify;\" ><h3 >$fila[1]</h3>";
+										if($fila[2]!=""){
+										echo "<a class=\"btn btn-success \" href=\"$fila[2]\"> Saber más...</a>";}
+										echo "</div></div>";
+										echo "</div>";
 								echo "</div>";
 								
 							$conta++;
@@ -130,11 +130,11 @@
 </div>
 
 <!-- =====================================================================CONOZCANOS seccion========================= --->
-    <section id="acerca" class=""  style=" padding:10% 0% 0% 0%">
+    <div id="acerca" class=""  style=" padding:0% 10% 0% 10%; background-color: rgba(255, 255, 255, 1); background-image:url(imagenes/marcohojas.png);background-size:100%;">
 	<div class="kontainer klearfix">
-		<div id="ditto-slider" class="carousel fade" data-ride="carousel">
+		<div id="ditto-slider" class="carousel fade" data-ride="carousel" style="padding:5% 0% 0% 0%">
+	
 				<div id="carousel-indicator-container">
-					<div class="sliding-line-carousel" id="line-top"></div>
 					<ol class="carousel-indicators">
 						<li data-target="#ditto-slider" data-slide-to="0" style="" class="active">Acerca de</li>
 						<li data-target="#ditto-slider" data-slide-to="1" style="">Historia</li>
@@ -142,23 +142,21 @@
 						<li data-target="#ditto-slider" data-slide-to="3" style="">Visión</li>
 						<li data-target="#ditto-slider" data-slide-to="4" style="">Valores</li>
 					</ol>
-					<div class="sliding-line-carousel" id="line-bottom"></div>
 				</div>
 			<div class="carousel-inner">
 				<div class="item active">
 						<div class="carousel-caption" id="home-slide-1">
 							<div class="grid_12 omega sz-content">
-								<div class="carousel-image"><img src="http://lorempixel.com/219/150/" width="219" height="150"></div>
+								<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
 								<?php 
 								include("Procesos/conexion.php");
 								$consulta="SELECT * FROM informacion";
 								$resultado=$mysqli->query($consulta);
 								$fila =$resultado->fetch_assoc();
 								$titulo2= strtoupper($fila['titulo']);
-								echo "<h3>$titulo2</h3>";
-								echo "<blockquote>";
+								echo "<div style=\"text-align:justify\"><h3>$titulo2</h3>";
 								echo nl2br("<p>$fila[informacion]</p>");
-								echo "</blockquote>";
+								echo "</div>";
 								?>	
 							</div>
 						</div>
@@ -167,18 +165,18 @@
 				<div class="item">
 					<div class="carousel-caption" id="home-slide-1">
 						<div class="grid_12 omega sz-content">
-							<div class="carousel-image"><img src="http://lorempixel.com/219/150/" width="268" height="150"></div>
-							<h3>HISTORIA</h3>
+							<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
+							<div  style="text-align:justify"><h3>HISTORIA</h3>
 								<p>CERTIMEX se crea en el año de 1997 gracias al interés de los productores mexicanos de querer contar con una certificadora nacional que realizara con calidad los servicios de inspección y certificación, pero a precios accesibles para los interesados.
 									Así, CERTIMEX inicia sus actividades en ese año ofreciendo únicamente los servicios de certificación de productos y procesos ecológicos u orgánicos, los cuales se han venido realizando desde entonces con bastante éxito</p>
-							
+							</div>
 						</div>
 					</div>
 				</div>			
 				<div class="item">
 					<div class="carousel-caption" id="home-slide-1">
 						<div class="grid_12 omega sz-content">
-							<div class="carousel-image"><img src="http://lorempixel.com/219/150/" width="268" height="150"></div>
+							<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
 								<h3>MISIÓN</h3>
 								<p>Somos una agencia de certificación de productos orgánicos, inocuos, de comercio justo, y calidad; con acreditación nacional e internacional, comprometida con los actores de las cadenas agroalimentarias sustentables.</p>		
 						</div>
@@ -187,7 +185,7 @@
 				<div class="item">
 					<div class="carousel-caption" id="home-slide-1">
 						<div class="grid_12 omega sz-content">
-							<div class="carousel-image"><img src="http://lorempixel.com/219/150/" width="268" height="150"></div>
+							<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
 							<h3>VISIÓN</h3>
 								<p>Ser la empresa social de certificación de productos y procesos sustentables, líder en México, alineada a su filosofía y valores, con procedimientos confiables e innovadores apegados a las realidades y exigencias nacionales e internacionales. </p>												
 												
@@ -198,8 +196,8 @@
 				<div class="item">
 					<div class="carousel-caption" id="home-slide-1">
 						<div class="grid_12 omega sz-content">
-							<div class="carousel-image"><img src="http://lorempixel.com/219/150/" width="222" height="150"></div>
-								<h3>VALORES</h3>
+							<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
+							<h3>VALORES</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 							
 						</div>
@@ -208,23 +206,18 @@
 			</div>
 
 			<!-- Controls -->
-			<a class="left carousel-control" href="#ditto-slider" data-slide="prev">
-				<span class="glyphicon-chevron-left"></span>
-			</a>
-			<a class="right carousel-control" href="#ditto-slider" data-slide="next">
-				<span class="glyphicon-chevron-right"></span>
-			</a>
 		</div>
+	
 			<!--<a href="#" class="about-btn">Learn More</a>-->
 	</div>
-	</section>
+	</div>
    
 <!-- =========================  SERVICIOS SECCION ============ -->
-<section id="servicios" class=""  style=" padding:0% 0% 0% 0%">
+<section id="servicios" class=""  style=" padding:0% 0% 0% 0%; background-color:#ECE9E9;">
 <div class="slide-section destination" id="servicios" page-slide="3">
 	<div class="kontainer klearfix">
 		<div id="content" class="grid_12 destination-up" page-slide="4">
-			<h2 class="sz-headline">servicios</h2>
+			<h2 class="sz-headline">SERVICIOS</h2>
 					<div id="slider1" style="height:500px">
 						<a class="buttons prev" href="#">&#60;</a>
 						<div class="viewport" style="height:500px">
@@ -237,7 +230,7 @@
 										echo"<li><div>
 														<div><img class=\"imagen-centro\" src=\"img_servicios/$fila[3]\" alt=\"image\"</div>
 														<div><h3 class=\"item-title\">$fila[1]</h3></div>
-														<div style=\"height:100px; overflow:scroll\"><p  class=\"sz-content\" align=\"justify\" >$fila[2]</p></div>
+														<div style=\"height:100px; overflow:scroll\"><p  class=\"sz-content\">$fila[2]</p></div>
 														<div><img class=\"imagen-centro\" style=\"width:100%\" src=\"Imagenes/cestoinf.png\" alt=\"image\"></div>
 										
 										</div></li>";
@@ -300,8 +293,8 @@
 </div>
 </section>
 
-	   <section id="procedimientos" class="services bg-primary">
-        <div class="container" style="padding:10% 0% 0% 0%">
+	   <section id="procedimientos" class="services bg-primary" style="background-color:#33b739">
+        <div class="container" style="padding:2% 0% 0% 0%">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2>PROCEDIMIENTOS</h2>
@@ -317,7 +310,7 @@
                                     <strong>INSPECCIÓN Y CERTIFICACIÓN</strong>
                                 </h4>
                                 <p>Procedimiento para la inspeción y certificación de productos orgánicos.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                              <!--  <a href="#" class="btn btn-light">Learn More</a>-->
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -329,7 +322,7 @@
                                     <strong>JAS-ORGANIC</strong>
                                 </h4>
                                 <p>Procedimiento para la inspección y certificación de productos orgánicos de acuerdo con las normas JAS- Organic de Japón.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                               <!-- <a href="#" class="btn btn-light">Learn More</a>-->
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -341,7 +334,7 @@
                                     <strong>BIRD FRIENDLY</strong>
                                 </h4>
                                 <p>Procedimientos para la inspección y ceritifación para Café Bajo sombra "Cafe Bird Friendly".</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <!--<a href="#" class="btn btn-light">Learn More</a>-->
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -353,7 +346,7 @@
                                     <strong>SIMBOLO DE PEQUEÑOS PRODUCTORES</strong>
                                 </h4>
                                 <p>Procedimiento para la inspección y certificación de las normas de Símbolo de Pequeños Productores</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <!--<a href="#" class="btn btn-success">Learn More</a>-->
                             </div>
                         </div>
                     </div>

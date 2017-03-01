@@ -113,10 +113,10 @@
 														<h5>Agregar Nuevo Elemento</h5>
 												</div>
 												<div class="form-group">
-													<input type="text" class="form-control" id="encabezado" name="encabezado" placeholder="Encabezado" required/>
+													<input type="text" class="form-control" id="encabezado" name="encabezado" placeholder="Encabezado" />
 												</div>
 												<div class="form-group">
-													<textarea class="form-control" name="contenido" placeholder="Contenido de la sección" rows="3" required/></textarea>
+													<textarea class="form-control" name="contenido" placeholder="Contenido de la sección" rows="3" /></textarea>
 												</div>
 												<div class="form-group">
 													<input type="text" class="form-control" id="complemento" name="complemento" placeholder="complemento (url)"/>
