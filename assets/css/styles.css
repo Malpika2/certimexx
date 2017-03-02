@@ -207,6 +207,57 @@ a.btn-cta {
   padding-left: 5px;
   padding-right: 5px;
 }
+/* SERVICIOS::::::::::*/
+.servicios{
+	font-family: 'Montserrat', sans-serif;
+	color:#756405;;
+}
+#servicios h2{
+	color:#12b112;
+	text-align:center;
+}
+#servicios hr{
+	color:red;
+	    border-width: 5px;
+	
+}
+
+/*NOTICIAS!==================*/
+.ultimasn{
+	padding:5% 0% 0% 0%; 
+	background-image:url(../../imagenes/apple-1122537_1920.jpg); 
+	background-repeat:round;
+	height:600px;
+}
+#ultimasn a:link{
+	color:#18e118;
+}
+/* visited link */
+#ultimasn a:visited {
+    color:red;
+}
+
+/* mouse over link */
+#ultimasn a:hover {
+    color: red;
+}
+
+/* selected link */
+#ultimasn a:active {
+    color: hotpink;
+}
+#ultimasn h2{
+	color:#18e118;
+	font-family: 'Montserrat', sans-serif;
+}
+#ultimasn p{
+	color:#FFFF;
+	font-family: 'Montserrat', sans-serif;
+	font-size:15px;
+}
+
+
+
 /* ====== Footer ====== */
 .footer {
   background: #26282c;

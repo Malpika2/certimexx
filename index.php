@@ -12,8 +12,7 @@
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
     <link rel="shortcut icon" href=".ico">  
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <!-- Theme CSS -->
@@ -24,7 +23,9 @@
 	<!-- Tiny carrousel-->
 	<link rel="stylesheet" href="assets/css/tinycarousel.css" type="text/css" media="screen"/>
 
-	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+	<!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -130,23 +131,33 @@
 </div>
 
 <!-- =====================================================================CONOZCANOS seccion========================= --->
-    <div id="acerca" class=""  style=" padding:0% 10% 0% 10%; background-color: rgba(255, 255, 255, 1); background-image:url(imagenes/marcohojas.png);background-size:100%;">
+   <section id="acerca"   style=" padding:0% 10% 0% 10%; background-color: rgba(255, 255, 255, 1); background-image:url(imagenes/marcohojas.png); background-repeat:round;">
 	<div class="kontainer klearfix">
-		<div id="ditto-slider" class="carousel fade" data-ride="carousel" style="padding:5% 0% 0% 0%">
-	
+		<div id="ditto-slider" class="carousel fade" data-ride="carousel" style="padding:5% 0% 0% 10%">
 				<div id="carousel-indicator-container">
-					<ol class="carousel-indicators">
+				
+					<div class="navbar-toggle" id="myNavbar2" style="background-color:rgba(255,255,255,0); float:inherit;" data-target="#myNavbar2" >
+						<a class=""href="#ditto-slider" data-slide="prev" style="float:left">
+						<i class="fa fa-chevron-left fa-3x" aria-hidden="true"></i>
+						</a>
+						<a class="" href="#ditto-slider" data-slide="next" style="float:right">
+						<i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+					<ol class="carousel-indicators" >
 						<li data-target="#ditto-slider" data-slide-to="0" style="" class="active">Acerca de</li>
 						<li data-target="#ditto-slider" data-slide-to="1" style="">Historia</li>
 						<li data-target="#ditto-slider" data-slide-to="2" style="">Misión</li>
 						<li data-target="#ditto-slider" data-slide-to="3" style="">Visión</li>
 						<li data-target="#ditto-slider" data-slide-to="4" style="">Valores</li>
 					</ol>
+					</div>
 				</div>
-			<div class="carousel-inner">
+			<div class="carousel-inner" style="height:500px; overflow:scroll; overflow-x:hidden;">
 				<div class="item active">
 						<div class="carousel-caption" id="home-slide-1">
-							<div class="grid_12 omega sz-content">
+							<div class="grid_12 omega sz-content" style>
 								<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
 								<?php 
 								include("Procesos/conexion.php");
@@ -204,21 +215,20 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- Controls -->
 		</div>
 	
 			<!--<a href="#" class="about-btn">Learn More</a>-->
 	</div>
-	</div>
+	</section>
    
 <!-- =========================  SERVICIOS SECCION ============ -->
-<section id="servicios" class=""  style=" padding:0% 0% 0% 0%; background-color:#ECE9E9;">
+<section id="servicios" class="servicios"  style=" padding:0% 0% 0% 0%; background-color:#ECE9E9;">
 <div class="slide-section destination" id="servicios" page-slide="3">
 	<div class="kontainer klearfix">
 		<div id="content" class="grid_12 destination-up" page-slide="4">
-			<h2 class="sz-headline">SERVICIOS</h2>
-					<div id="slider1" style="height:500px">
+			<h2><b>SERVICIOS</b></h2>
+			<hr>
+					<div id="slider1" style="height:400px">
 						<a class="buttons prev" href="#">&#60;</a>
 						<div class="viewport" style="height:500px">
 							<ul class="overview">
@@ -287,13 +297,15 @@
 						</div>
 						<a class="buttons next" href="#">&#62;</a>
 					</div>
+			<hr>
 		</div>
 
 	</div><!--//servicios-section ó servicios-->
 </div>
 </section>
 
-	   <section id="procedimientos" class="services bg-primary" style="background-color:#33b739">
+<!-- =========================  PROCEDIMIENTOS SECCION ============ -->
+ <section id="procedimientos" class="services bg-primary" style="background-color:#33b739">
         <div class="container" style="padding:2% 0% 0% 0%">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -304,7 +316,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-								<img src="Imagenes/ins.jpg"/>
+								<img src="Imagenes/ins.png"/>
 								</span>
                                 <h4>
                                     <strong>INSPECCIÓN Y CERTIFICACIÓN</strong>
@@ -316,7 +328,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-								<img src="Imagenes/jas.jpg"/>
+								<img src="Imagenes/jas.png"/>
                             </span>
                                 <h4>
                                     <strong>JAS-ORGANIC</strong>
@@ -328,7 +340,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-								<img src="Imagenes/pic3.jpg"/>
+								<img src="Imagenes/pic3.png"/>
                             </span>
                                 <h4>
                                     <strong>BIRD FRIENDLY</strong>
@@ -340,7 +352,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-								<img src="Imagenes/pic5.jpg"/>
+								<img src="Imagenes/pic5.png"/>
                             </span>
                                 <h4>
                                     <strong>SIMBOLO DE PEQUEÑOS PRODUCTORES</strong>
@@ -359,15 +371,14 @@
         <!-- /.container -->
     </section>
 	
-	
-	    <section id="ultimasn" class="ultimasn-section" style="padding:10% 0% 0% 0%">
-           <div id="ultimasn" class="ultimasn-section">
+	<!-- =========================  NOTICIAS SECCION ============ -->
+<section id="ultimasn" class="ultimasn">
+           <div id="ultimasn" class="ultimasn">
         <div class="container text-center">
-            <h2 class="section-title">ULTIMAS NOTICIAS</h2>
 				<div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Ultimas Noticias
+                    <div class="panel panel-default" style="background-color:rgba(50, 48, 49, 0.64);">
+                        <div class="panel-heading" style="background-color:rgba(0, 0, 0, 0.48);">
+							<h2 class="section-title" style="color:white">ULTIMAS NOTICIAS</h2>
                         </div>
                         <div class="panel-body">
 							<div class="table-responsive">
@@ -380,7 +391,7 @@
 												$resultado= $mysqli->query($consulta);
 												
 												while($fila = $resultado->fetch_row()){
-													echo "<th class=\"\"><div style='width:200px; overflow:hidden;'> <a href=\"#$fila[0]\" data-toggle=\"tab\">$fila[1]</a></div> </th>";
+													echo "<th><div style='width:200px; overflow:hidden; text-align:center;'> <a href=\"#$fila[0]\" data-toggle=\"tab\">$fila[1]</a></div> </th>";
 														
 												}
 										?> 
@@ -399,7 +410,7 @@
 											
 											echo "<div class=\"tab-pane fade\" id=\"$fila[0]\">";
 												echo "<div class=\"\"><h2> $fila[1]</h2></div>";
-												echo "<div class=\"\"><div class=\"col-md-5 col-sm-5 col-xs-12\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" width=\"300\"/></div>";
+												echo "<div class=\"\"><div class=\"col-md-5 col-sm-5 col-xs-12\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" width=\"250\" height=\"250\"/></div>";
 												echo "<div class=\"col-md-7 col-sm-7 col-xs-12\" style=\"with:65px; height:65px; overflow:hidden; text-overflow:ellipsis;\"><p align=\"justify\">$fila[2]</br>$contenido ...</p></div></div>";
 												echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><button type=\"submit\" class=\"btn btn-info\" formtarget=\"_blank\">Leer Más</button>";
 												echo "<div class=\"\"><input class=\"\" name=\"id_noticias\" value=\"$fila[0]\" type=\"hidden\"/></div></form>";
@@ -448,8 +459,19 @@
 						</div>  
 				</div><!--//container-->
 		</div>
-		<div>
-	<h3>Directorio</h3>
+		
+		
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        <h3>Directorio</h3></a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body">
+	 
 				<div class="item col-md-3 col-sm-3 col-xs-12">
 					<b>Consejo directivo</b>
 						<ul style="list-style-type:none">
@@ -488,7 +510,10 @@
 							<li>marthitacmx@hotmail.com</li>
 						</ul>
 				</div>
-		</div>
+	  </div>
+    </div>
+  </div>
+</div> 
     </section> 
     <!-- Footer -->
     <footer>
