@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
@@ -228,7 +228,7 @@
 		<div id="content" class="grid_12 destination-up" page-slide="4">
 			<h2><b>SERVICIOS</b></h2>
 			<hr>
-					<div id="slider1" style="height:400px">
+					<div id="slider1" style="height:400px; background-color:#eee; padding-top:1%">
 						<a class="buttons prev" href="#">&#60;</a>
 						<div class="viewport" style="height:500px">
 							<ul class="overview">
@@ -314,7 +314,7 @@
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
+                            <div class="service-item cont-proc">
                                 <span class="fa-stack fa-4x">
 								<img src="Imagenes/ins.png"/>
 								</span>
@@ -326,7 +326,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
+                            <div class="service-item cont-proc">
                                 <span class="fa-stack fa-4x">
 								<img src="Imagenes/jas.png"/>
                             </span>
@@ -338,7 +338,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
+                            <div class="service-item cont-proc">
                                 <span class="fa-stack fa-4x">
 								<img src="Imagenes/pic3.png"/>
                             </span>
@@ -350,7 +350,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
+                            <div class="service-item cont-proc">
                                 <span class="fa-stack fa-4x">
 								<img src="Imagenes/pic5.png"/>
                             </span>
@@ -375,9 +375,9 @@
 <section id="ultimasn" class="ultimasn">
            <div id="ultimasn" class="ultimasn">
         <div class="container text-center">
-				<div class="col-md-12">
-                    <div class="panel panel-default" style="background-color:rgba(50, 48, 49, 0.64);">
-                        <div class="panel-heading" style="background-color:rgba(0, 0, 0, 0.48);">
+				<div class="col-md-12" style="padding-top:1%">
+                    <div class="panel panel-default" style="background-color:rgba(50, 48, 49, 0.0);">
+                        <div class="panel-heading" style="background-color:rgba(0, 0, 0, 0.4);">
 							<h2 class="section-title" style="color:white">ULTIMAS NOTICIAS</h2>
                         </div>
                         <div class="panel-body">
@@ -408,11 +408,13 @@
 										while($fila = $resultado->fetch_row()){
 											$contenido=substr($fila[4],0,100);
 											
-											echo "<div class=\"tab-pane fade\" id=\"$fila[0]\">";
+											echo "<div class=\"tab-pane fade cont-not\" id=\"$fila[0]\">";
 												echo "<div class=\"\"><h2> $fila[1]</h2></div>";
-												echo "<div class=\"\"><div class=\"col-md-5 col-sm-5 col-xs-12\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" width=\"250\" height=\"250\"/></div>";
-												echo "<div class=\"col-md-7 col-sm-7 col-xs-12\" style=\"with:65px; height:65px; overflow:hidden; text-overflow:ellipsis;\"><p align=\"justify\">$fila[2]</br>$contenido ...</p></div></div>";
-												echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><button type=\"submit\" class=\"btn btn-info\" formtarget=\"_blank\">Leer Más</button>";
+												echo "<div class=\"row\">
+														  <div class=\"col-md-6 col-sm-6 col-xs-6\" width=\"300px\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" height=\"100%\"style=\"padding:5% 0% 5% 5%;\"/></div>";
+													echo "<div class=\"col-md-6 col-sm-6 col-xs-6\" style=\height:40%; overflow:hidden; text-overflow:ellipsis;\"><p align=\"justify\" style=\"padding:0% 5% 0% 0%;\">$fila[2]</br>$contenido ...</p>";
+												    echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><button type=\"submit\" class=\"btn btn-success\" formtarget=\"_blank\">Leer Más</button></div>
+													</div>";
 												echo "<div class=\"\"><input class=\"\" name=\"id_noticias\" value=\"$fila[0]\" type=\"hidden\"/></div></form>";
 											echo "</div>"; 
 										}
@@ -517,7 +519,7 @@
     </section> 
     <!-- Footer -->
     <footer>
-		        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-5x"></i></a>
+		       
     </footer>
      
     <!-- Javascript -->          

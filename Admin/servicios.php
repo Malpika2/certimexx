@@ -104,7 +104,7 @@
                         </div>
                         <div class="panel-body">
 							<div class="row">
-								<div class="col-md-7 col-sm-7">
+								<div class="col-md-5 col-sm-5">
 									<div class="tab-content">
 										<div class="tab-pane fade active in" id="inicio">
 										</div>
@@ -162,31 +162,58 @@
 												</div>
 											</form>
 										</div><!-- / Formulario-->
-										
-											<?php
-											?>
+									<?php
+									
+										include("../Procesos/conexion.php");
+										$directory="assets/img_servicios/";
+										$consulta="SELECT id_servicios,nombre,descripcion,imagen FROM servicios";
+										$resultado= $mysqli->query($consulta);
+										$dirint = dir($directory);
+										while($fila = $resultado->fetch_row()){
+											
+											echo "<div class=\"tab-pane fade\" id=\"$fila[0]\">";
+												echo"<form role=\"form\" name=\"actualizarServicios\" enctype=\"multipart/form-data\" method=\"POST\" action=\"../Procesos/updateServicios.php\">";
+													echo"<div class=\"form-group\"><input class=\"form-control\" name=\"nombre\" value=\"$fila[1]\" /></div>";
+													echo"<div class=\"form-group\"><img src=\"$directory/$fila[3]\" width=\"300\"/> </div>";
+													echo"<div class=\"form-group\"><textarea class=\"form-control\" name=\"descripcion\" rows=\"3\" />$fila[2]</textarea> </div>";
+													echo"<div class=\"form-group\"><button type=\"submit\" name=\"Btnser\" value=\"actualizar\" class=\"btn btn-default\"><i class=\" fa fa-refresh \"></i> Actualizar</button>";
+													echo"          				   <button type=\"submit\" name=\"Btnser\" value=\"eliminar\" class=\"btn btn-danger\"><i class=\"fa fa-pencil\"></i> Eliminar</button></div>";
+													echo"<div class=\"form-group\"><input class=\"form-control\" name=\"id_servicios\" value=\"$fila[0]\" type=\"hidden\"/></div>";
+													
+													echo"</form>";
+											echo"</div>";
+										}
+									?>
 									</div>
 								</div>
-								<div class="col-md-5 col-sm-5">
-									<div>
+								<div class="col-md-7 col-sm->
 										<div class="table-responsive">
 											<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 												<thead>
-													<tr>
-														<th>
-															
-														</th>
-													</tr>
+												<tr>
+													<th>Fecha</th>
+													<th>Titulo</th>
+													<th>#</th>
+												</tr>
 												</thead>
 												<tbody>
-													<tr>
-													</tr>
-													<?php
-													?>
-												</tbody>
+												<?php
+													include ("../Procesos/conexion.php");
+													$consulta="SELECT id_servicios,nombre,descripcion FROM servicios";
+													$resultado= $mysqli->query($consulta);
+													
+													while($fila = $resultado->fetch_row()){
+														$contenido=substr($fila[2],0,50);
+														echo "<tr>";
+														echo "<td>$fila[1]</td>";
+														echo "<td>$contenido</td>";
+														echo "<td><button class=\"btn btn-primary\" href=\"#$fila[0]\" data-toggle=\"tab\"><i class=\"fa fa-edit \">Editar</i></button></td>";
+														echo "</tr>";	
+													}
+												?>
+											</tbody>
 											</table>
 										</div>
-									</div>
 								</div>
 							</div>
 						</div>

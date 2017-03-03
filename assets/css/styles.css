@@ -210,11 +210,12 @@ a.btn-cta {
 /* SERVICIOS::::::::::*/
 .servicios{
 	font-family: 'Montserrat', sans-serif;
-	color:#756405;;
+	color:##999;;
 }
 #servicios h2{
-	color:#12b112;
+	color:#196207;
 	text-align:center;
+	
 }
 #servicios hr{
 	color:red;
@@ -222,12 +223,25 @@ a.btn-cta {
 	
 }
 
+#procedimientos .cont-proc{
+	text-align:center;
+	background-image:url(../../imagenes/shadows.png);
+	background-size:100%;
+}
+
 /*NOTICIAS!==================*/
 .ultimasn{
-	padding:5% 0% 0% 0%; 
+	padding:0% 0% 0% 0%; 
 	background-image:url(../../imagenes/apple-1122537_1920.jpg); 
-	background-repeat:round;
-	height:600px;
+	background-repeat:no-repeat;
+	height:100%;
+}
+#ultimasn th{
+	background-color:rgba(0, 0, 0, 0.48);
+	
+}
+#ultimasn .cont-not{
+	background-color:rgba(0, 0, 0, 0.4);
 }
 #ultimasn a:link{
 	color:#18e118;
