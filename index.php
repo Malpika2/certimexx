@@ -131,9 +131,9 @@
 </div>
 
 <!-- =====================================================================CONOZCANOS seccion========================= --->
-   <section id="acerca"   style=" padding:0% 10% 0% 10%; background-color: rgba(255, 255, 255, 1); background-image:url(imagenes/marcohojas.png); background-repeat:round;">
+   <section id="acerca"   style=" padding:0% 0% 0% 0%; background-color: rgba(255, 255, 255, 1); background-image:url(imagenes/marcohojas.png); background-repeat:round;">
 	<div class="kontainer klearfix">
-		<div id="ditto-slider" class="carousel fade" data-ride="carousel" style="padding:5% 0% 0% 10%">
+		<div id="ditto-slider" class="carousel fade" data-ride="carousel" style="padding:5% 0% 0% 0%">
 				<div id="carousel-indicator-container">
 				
 					<div class="navbar-toggle" id="myNavbar2" style="background-color:rgba(255,255,255,0); float:inherit;" data-target="#myNavbar2" >
@@ -154,7 +154,7 @@
 					</ol>
 					</div>
 				</div>
-			<div class="carousel-inner" style="height:500px; overflow:scroll; overflow-x:hidden;">
+			<div class="carousel-inner">
 				<div class="item active">
 						<div class="carousel-caption" id="home-slide-1">
 							<div class="grid_12 omega sz-content" style>
@@ -165,7 +165,7 @@
 								$resultado=$mysqli->query($consulta);
 								$fila =$resultado->fetch_assoc();
 								$titulo2= strtoupper($fila['titulo']);
-								echo "<div style=\"text-align:justify\"><h3>$titulo2</h3>";
+								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
 								echo nl2br("<p>$fila[informacion]</p>");
 								echo "</div>";
 								?>	
@@ -207,9 +207,37 @@
 				<div class="item">
 					<div class="carousel-caption" id="home-slide-1">
 						<div class="grid_12 omega sz-content">
+						
 							<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
 							<h3>VALORES</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<div class="row">
+								<div class="col-xs-6 col-sm-3 col-md-3" style="text-align:justify;">
+									<ul style="list-style-type:none">
+										<li><img src="imagenes/honestidad.png" width="50px"/><b>Honestidad</b></br>Por vivir de forma congruente entre lo que se piensa y lo que se hace de manera justa, recta e íntegra.</li>
+										<li><img src="imagenes/etica.png" width="50px"/><b>Ética</b> </br>Para actuar acorde a las normas morales.</li>
+										<li><img src="imagenes/tolerancia.png" width="50px"/><b>Tolerancia</b> </br>Para la aceptación de una situación, o de otra persona o grupo considerado diferente</li>
+										
+									</ul>
+								</div>
+								<div class="col-xs-6 col-sm-3 col-md-3" style="text-align:justify;">
+									<ul style="list-style-type:none">
+										<li><img src="imagenes/equidad.png" width="50px"/><b>Equidad</b></br>Para propiciar el equilibrio entre la justicia y la ley.</li>
+										<li><img src="imagenes/transparencia.png" width="50px"/><b>Transparencia</b></br>En las acciones que se realizan en la empresa.</li>
+									</ul>
+								</div><div class="col-xs-6 col-sm-3 col-md-3" style="text-align:justify;">
+									<ul style="list-style-type:none">
+										<li><img src="imagenes/respeto.png" width="50px"/><b>Respeto</b></br>Para reconocer, apreciar y valorar a mi persona, a los demás, y el entorno.</li>
+										<li><img src="imagenes/responsabilidad.png" width="50px"/><b>Responsabilidad</b></br>Para tener obligación moral y compromiso.</li>
+										<li><img src="imagenes/confidencialidad.png" width="50px"/><b>Confidencialidad</b></br>Para mantener en reserva la información y acciones que se realicen dentro y fuera de CERTIMEX.</li>
+										
+									</ul>
+								</div><div class="col-xs-6 col-sm-3 col-md-3" style="text-align:justify;">
+									<ul style="list-style-type:none">
+										<li><img src="imagenes/lealtad.png" width="50px"/><b>Lealtad</b></br>Para ser firmes con la filosofía de CERTIMEX y con cada uno de sus clientes.</li>
+										<li><img src="imagenes/dignidad.png" width="50px"/><b>Dignidad</b></br>Basada en el reconocimiento de la persona de ser merecedora de respeto.</li>
+									</ul>
+								</div>
+							</div>
 							
 						</div>
 					</div>

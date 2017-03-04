@@ -207,6 +207,12 @@ a.btn-cta {
   padding-left: 5px;
   padding-right: 5px;
 }
+
+#acerca b{
+	
+	text-align:center;
+}
+
 /* SERVICIOS::::::::::*/
 .servicios{
 	font-family: 'Montserrat', sans-serif;
