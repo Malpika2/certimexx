@@ -93,7 +93,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Acerca de: <small> Edicion de la informacion de la seccion "Acerca de CERTIMEX" </small>
+                          <small> Editar informacion de la seccion "Acerca de CERTIMEX" </small>
                         </h1>
                     </div>
                 </div> <!-- /. ROW  -->
@@ -104,20 +104,69 @@
 							$consulta = "SELECT * FROM informacion";
 							$resultado = $mysqli->query($consulta);
 							$info=$resultado->fetch_assoc();
-							echo "<div class=\"panel-heading col-md-12\"><input class=\"col-md-5\" name=\"titulo\" value=\"$info[titulo]\"required/></div>";
+							
+							echo "<div class=\"panel-heading col-md-12\">
+										<label>Acerca de:</label></br>
+										<input class=\"col-md-5\" name=\"titulo\" value=\"$info[titulo]\"required/>
+										<div class=\"form-group col-md-7\">
+											<label>Actualizar Imagen</label>
+											<input type=\"file\" name=\"imagen\"/>
+										</div>
+								 </div>";
+							echo "<div class=\"panel-body col-md-12\"> 
+										<textarea class=\"col-md-12\" rows= \"10\" name=\"informacion\"required/>$info[informacion]</textarea>
+								  </div>";
+						?>
+							<div class="panel-footer">
+								<button type="submit" name="BtnAct" value="acerca" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>
+							</div>
+						</div>
+						
+						<div class="panel panel-info">
+						<?php
+							include("../procesos/conexion.php");
+							$consulta = "SELECT * FROM informacion";
+							$resultado = $mysqli->query($consulta);
+							$info=$resultado->fetch_assoc();
+							echo "<div class=\"panel-heading col-md-12\"><label>Historia:</label></br><input class=\"col-md-5\" name=\"titulo\" value=\"$info[titulo]\"required/></div>";
 							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacion\"required/>$info[informacion]</textarea></div>";
 						?>
 							<div class="panel-footer">
-								<button type="submit" name="BtnAct" value="actualizar" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>
+								<button type="submit" name="BtnAct" value="historia" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>
 							</div>
 						</div>
+						
+						<div class="panel panel-info">
+						<?php
+							include("../procesos/conexion.php");
+							$consulta = "SELECT * FROM informacion";
+							$resultado = $mysqli->query($consulta);
+							$info=$resultado->fetch_assoc();
+							echo "<div class=\"panel-heading col-md-12\"><label>Misión:</label></br><input class=\"col-md-5\" name=\"titulo\" value=\"$info[titulo]\"required/></div>";
+							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacion\"required/>$info[informacion]</textarea></div>";
+						?>
+							<div class="panel-footer">
+								<button type="submit" name="BtnAct" value="mision" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>
+							</div>
+						</div>						
+						<div class="panel panel-info">
+						<?php
+							include("../procesos/conexion.php");
+							$consulta = "SELECT * FROM informacion";
+							$resultado = $mysqli->query($consulta);
+							$info=$resultado->fetch_assoc();
+							echo "<div class=\"panel-heading col-md-12\"><label>Visión:</label></br><input class=\"col-md-5\" name=\"titulo\" value=\"$info[titulo]\"required/></div>";
+							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacion\"required/>$info[informacion]</textarea></div>";
+						?>
+							<div class="panel-footer">
+								<button type="submit" name="BtnAct" value="vision" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>
+							</div>
+						</div>
+						
 					</form>
 				<footer><p>Soporte Técnico.  <a href="#"></a></p></footer>
             </div>
             <!-- /. PAGE INNER  -->
-			
-			
-			
         </div>
         <!-- /. PAGE WRAPPER  -->
     </div>

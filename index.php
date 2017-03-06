@@ -157,14 +157,15 @@
 			<div class="carousel-inner">
 				<div class="item active">
 						<div class="carousel-caption" id="home-slide-1">
-							<div class="grid_12 omega sz-content" style>
-								<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
+							<div class="grid_12 omega sz-content">
+								
 								<?php 
 								include("Procesos/conexion.php");
 								$consulta="SELECT * FROM informacion";
 								$resultado=$mysqli->query($consulta);
 								$fila =$resultado->fetch_assoc();
 								$titulo2= strtoupper($fila['titulo']);
+								echo "<div class=\"carousel-image\"><img src=\"$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
 								echo nl2br("<p>$fila[informacion]</p>");
 								echo "</div>";
@@ -176,30 +177,51 @@
 				<div class="item">
 					<div class="carousel-caption" id="home-slide-1">
 						<div class="grid_12 omega sz-content">
-							<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
-							<div  style="text-align:justify"><h3>HISTORIA</h3>
-								<p>CERTIMEX se crea en el año de 1997 gracias al interés de los productores mexicanos de querer contar con una certificadora nacional que realizara con calidad los servicios de inspección y certificación, pero a precios accesibles para los interesados.
-									Así, CERTIMEX inicia sus actividades en ese año ofreciendo únicamente los servicios de certificación de productos y procesos ecológicos u orgánicos, los cuales se han venido realizando desde entonces con bastante éxito</p>
-							</div>
+															<?php 
+								include("Procesos/conexion.php");
+								$consulta="SELECT * FROM informacion";
+								$resultado=$mysqli->query($consulta);
+								$fila =$resultado->fetch_assoc();
+								$titulo2= strtoupper($fila['titulo']);
+								echo "<div class=\"carousel-image\"><img src=\"$fila[url]\" width=\"300\" height=\"200\"></div>";
+								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
+								echo nl2br("<p>$fila[informacion]</p>");
+								echo "</div>";
+								?>	
 						</div>
 					</div>
 				</div>			
 				<div class="item">
 					<div class="carousel-caption" id="home-slide-1">
 						<div class="grid_12 omega sz-content">
-							<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
-								<h3>MISIÓN</h3>
-								<p>Somos una agencia de certificación de productos orgánicos, inocuos, de comercio justo, y calidad; con acreditación nacional e internacional, comprometida con los actores de las cadenas agroalimentarias sustentables.</p>		
+															<?php 
+								include("Procesos/conexion.php");
+								$consulta="SELECT * FROM informacion";
+								$resultado=$mysqli->query($consulta);
+								$fila =$resultado->fetch_assoc();
+								$titulo2= strtoupper($fila['titulo']);
+								echo "<div class=\"carousel-image\"><img src=\"$fila[url]\" width=\"300\" height=\"200\"></div>";
+								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
+								echo nl2br("<p>$fila[informacion]</p>");
+								echo "</div>";
+								?>	
 						</div>
 					</div>
 				</div>				
 				<div class="item">
 					<div class="carousel-caption" id="home-slide-1">
 						<div class="grid_12 omega sz-content">
-							<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
-							<h3>VISIÓN</h3>
-								<p>Ser la empresa social de certificación de productos y procesos sustentables, líder en México, alineada a su filosofía y valores, con procedimientos confiables e innovadores apegados a las realidades y exigencias nacionales e internacionales. </p>												
-												
+															<?php 
+								include("Procesos/conexion.php");
+								$consulta="SELECT * FROM informacion";
+								$resultado=$mysqli->query($consulta);
+								$fila =$resultado->fetch_assoc();
+								$titulo2= strtoupper($fila['titulo']);
+								echo "<div class=\"carousel-image\"><img src=\"$fila[url]\" width=\"300\" height=\"200\"></div>";
+								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
+								echo nl2br("<p>$fila[informacion]</p>");
+								echo "</div>";
+								?>					
 						</div>
 					</div>
 				</div>
