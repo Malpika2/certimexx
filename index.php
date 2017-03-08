@@ -63,21 +63,28 @@
 							<a href="#inicio" class="dropdown-toggle" data-toggle="dropdown">LOGIN<span class="caret"></span></a>
 							<ul id="menudp" class="dropdown-menu">
 								<li>
-									<div class="col-md-12">
-										<form class="form" role="form" method="post" action="Procesos/validarUsuario.php" accept-charset="UTF-8" id="login-nav">
+									<div class="col-md-12"> 										
+									<div class="contenedor">
+									<div id="formulario"    >
+										<form class="form" method="POST" action="return false" onsubmit="return false" accept-charset="UTF-8">
+											<div  id="resultado"></div>
 											<div class="form-group">
 												<h5>Iniciar Sesión</h5>
 											</div>
+											
 											<div class="form-group">
-												<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required/>
+												<input type="text" class="form-control" id="user" name="user" placeholder="Usuario"required/>
 											</div>
 											<div class="form-group">
-												<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Password" required/>
+												<input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required/>
 											</div>
 											<div class="form-group">
-												<button type="submit" class="btn btn-cta" align="center">Sign in</button>
+												<button onclick="Validar(document.getElementById('user').value, document.getElementById('pass').value);" class="btn btn-cta" align="center" >accesar</button><!-- type="submit" class="btn btn-cta" align="center">Iniciar Sesión</button-->
 											</div>
 										</form>
+
+        </div>
+    </div>
 									</div>
 								</li>
 							</ul>
@@ -165,7 +172,7 @@
 								$resultado=$mysqli->query($consulta);
 								$fila =$resultado->fetch_assoc();
 								$titulo2= strtoupper($fila['titulo']);
-								echo "<div class=\"carousel-image\"><img src=\"$fila[url]\" width=\"300\" height=\"200\"></div>";
+								echo "<div class=\"carousel-image\"><img src=\"imagenes/$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
 								echo nl2br("<p>$fila[informacion]</p>");
 								echo "</div>";
@@ -179,11 +186,11 @@
 						<div class="grid_12 omega sz-content">
 															<?php 
 								include("Procesos/conexion.php");
-								$consulta="SELECT * FROM informacion";
+								$consulta="SELECT * FROM historia";
 								$resultado=$mysqli->query($consulta);
 								$fila =$resultado->fetch_assoc();
 								$titulo2= strtoupper($fila['titulo']);
-								echo "<div class=\"carousel-image\"><img src=\"$fila[url]\" width=\"300\" height=\"200\"></div>";
+								echo "<div class=\"carousel-image\"><img src=\"imagenes/$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
 								echo nl2br("<p>$fila[informacion]</p>");
 								echo "</div>";
@@ -196,11 +203,11 @@
 						<div class="grid_12 omega sz-content">
 															<?php 
 								include("Procesos/conexion.php");
-								$consulta="SELECT * FROM informacion";
+								$consulta="SELECT * FROM mision";
 								$resultado=$mysqli->query($consulta);
 								$fila =$resultado->fetch_assoc();
 								$titulo2= strtoupper($fila['titulo']);
-								echo "<div class=\"carousel-image\"><img src=\"$fila[url]\" width=\"300\" height=\"200\"></div>";
+								echo "<div class=\"carousel-image\"><img src=\"imagenes/$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
 								echo nl2br("<p>$fila[informacion]</p>");
 								echo "</div>";
@@ -213,11 +220,11 @@
 						<div class="grid_12 omega sz-content">
 															<?php 
 								include("Procesos/conexion.php");
-								$consulta="SELECT * FROM informacion";
+								$consulta="SELECT * FROM vision";
 								$resultado=$mysqli->query($consulta);
 								$fila =$resultado->fetch_assoc();
 								$titulo2= strtoupper($fila['titulo']);
-								echo "<div class=\"carousel-image\"><img src=\"$fila[url]\" width=\"300\" height=\"200\"></div>";
+								echo "<div class=\"carousel-image\"><img src=\"imagenes/$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
 								echo nl2br("<p>$fila[informacion]</p>");
 								echo "</div>";
@@ -355,19 +362,20 @@
 </section>
 
 <!-- =========================  PROCEDIMIENTOS SECCION ============ -->
- <section id="procedimientos" class="services bg-primary" style="background-color:#33b739">
-        <div class="container" style="padding:2% 0% 0% 0%">
+ <section id="procedimientos" class="services bg-primary" style="background-color:green">
+        <div class="container" style="padding:2% 0% 1% 0%">
             <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
+                <div class="col-lg-10 col-lg-offset-1" style="background-color:">
                     <h2>PROCEDIMIENTOS</h2>
 					<p class="intro">Contribuye a la conservación y mejoramiento de los recursos naturales y el medio ambiente.</p>
                     <hr class="small">
-                    <div class="row">
+                    <div class="row" style="background-color:white">
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item cont-proc">
                                 <span class="fa-stack fa-4x">
-								<img src="Imagenes/ins.png"/>
+								<img src="Imagenes/pic6.jpg"/>
 								</span>
+								<img src="Imagenes/shadows.png"/>
                                 <h4>
                                     <strong>INSPECCIÓN Y CERTIFICACIÓN</strong>
                                 </h4>
@@ -376,10 +384,10 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <div class="service-item cont-proc">
+                            <div class="service-item">
                                 <span class="fa-stack fa-4x">
-								<img src="Imagenes/jas.png"/>
-                            </span>
+								<img src="Imagenes/pic4.jpg"/>
+                            </span><img src="Imagenes/shadows.png"/>
                                 <h4>
                                     <strong>JAS-ORGANIC</strong>
                                 </h4>
@@ -390,8 +398,8 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item cont-proc">
                                 <span class="fa-stack fa-4x">
-								<img src="Imagenes/pic3.png"/>
-                            </span>
+								<img src="Imagenes/pic3.jpg"/>
+                            </span><img src="Imagenes/shadows.png"/>
                                 <h4>
                                     <strong>BIRD FRIENDLY</strong>
                                 </h4>
@@ -402,8 +410,8 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item cont-proc">
                                 <span class="fa-stack fa-4x">
-								<img src="Imagenes/pic5.png"/>
-                            </span>
+								<img src="Imagenes/pic5.jpg"/>
+                            </span><img src="Imagenes/shadows.png"/>
                                 <h4>
                                     <strong>SIMBOLO DE PEQUEÑOS PRODUCTORES</strong>
                                 </h4>
@@ -585,6 +593,20 @@
 		$('#slider1').tinycarousel();
 	});
 	</script>
+            <script>
+     
+            function Validar(user, pass)
+            {
+                $.ajax({
+                    url: "Procesos/validar.php",
+                    type: "POST",
+                    data: "user="+user+"&pass="+pass,
+                    success: function(resp){
+                    $('#resultado').html(resp)
+                    }       
+                });
+            }
+            </script>
        
 </body>
 </html> 

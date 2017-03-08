@@ -16,13 +16,19 @@ if (!$resultado = $mysqli->query($sql)) { //Si la consulta falla
 }
 if ($resultado->num_rows === 0) { //No se encuentran coincidencias
 	echo "Lo sentimos. No se pudo encontrar una coincidencia para el ID $user. Inténtelo de nuevo.";
-    exit;
+      $_SESSION['errorMessage'] = 1;
+      header("Location:../index.php");
+      exit();   
+   exit;
 }
-$usuario = $resultado->fetch_assoc();
-	echo "usuario: ".$usuario['usuario']." Contraseña: ".$usuario['contrasena']."";
+else{
+	$usuario = $resultado->fetch_assoc();
+	$_SESSION['uid'] = $usuario['id_usuarios'];
+	$_SESSION['username'] = $usuario['usuario'];
 	header("Location:../admin/index.html");
 	
-	$resultado->free();
-	$mysqli->close();
+	exit();
+	
+}	
 
 ?>

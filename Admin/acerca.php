@@ -107,14 +107,17 @@
 							
 							echo "<div class=\"panel-heading col-md-12\">
 										<label>Acerca de:</label></br>
-										<input class=\"col-md-5\" name=\"titulo\" value=\"$info[titulo]\"required/>
-										<div class=\"form-group col-md-7\">
-											<label>Actualizar Imagen</label>
-											<input type=\"file\" name=\"imagen\"/>
+										 <div class=\"row\">
+											<input class=\"col-md-3\" name=\"tituloI\" value=\"$info[titulo]\"/>
+											<div class=\"form-group col-md-6\">
+												<label>Actualizar Imagen</label>
+												<input type=\"file\" name=\"imagenI\"/>
+											</div>
+											<div class=\"form-group col-md-3\"><img src=\"../imagenes/$info[url]\" width=\"150\"/> </div>
 										</div>
 								 </div>";
 							echo "<div class=\"panel-body col-md-12\"> 
-										<textarea class=\"col-md-12\" rows= \"10\" name=\"informacion\"required/>$info[informacion]</textarea>
+										<textarea class=\"col-md-12\" rows= \"10\" name=\"informacionI\"/>$info[informacion]</textarea>
 								  </div>";
 						?>
 							<div class="panel-footer">
@@ -124,12 +127,22 @@
 						
 						<div class="panel panel-info">
 						<?php
-							include("../procesos/conexion.php");
-							$consulta = "SELECT * FROM informacion";
+							$consulta = "SELECT * FROM historia";
 							$resultado = $mysqli->query($consulta);
 							$info=$resultado->fetch_assoc();
-							echo "<div class=\"panel-heading col-md-12\"><label>Historia:</label></br><input class=\"col-md-5\" name=\"titulo\" value=\"$info[titulo]\"required/></div>";
-							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacion\"required/>$info[informacion]</textarea></div>";
+							
+							echo "<div class=\"panel-heading col-md-12\">
+									<label>Historia:</label></br>
+									 <div class=\"row\">
+									<input class=\"col-md-3\" name=\"tituloH\" value=\"$info[titulo]\"/>
+									<div class=\"form-group col-md-6\">
+											<label>Actualizar Imagen</label>
+											<input type=\"file\" name=\"imagenH\"/>
+									</div>
+									<div class=\"form-group col-md-3\"><img src=\"../imagenes/$info[url]\" width=\"150\"/> </div>
+									</div>
+								</div>";
+							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacionH\"/>$info[informacion]</textarea></div>";
 						?>
 							<div class="panel-footer">
 								<button type="submit" name="BtnAct" value="historia" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>
@@ -138,12 +151,22 @@
 						
 						<div class="panel panel-info">
 						<?php
-							include("../procesos/conexion.php");
-							$consulta = "SELECT * FROM informacion";
+							$consulta = "SELECT * FROM mision";
 							$resultado = $mysqli->query($consulta);
 							$info=$resultado->fetch_assoc();
-							echo "<div class=\"panel-heading col-md-12\"><label>Misión:</label></br><input class=\"col-md-5\" name=\"titulo\" value=\"$info[titulo]\"required/></div>";
-							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacion\"required/>$info[informacion]</textarea></div>";
+							
+							echo "<div class=\"panel-heading col-md-12\">
+									<label>Misión:</label></br>
+									 <div class=\"row\">
+										<input class=\"col-md-3\" name=\"tituloM\" value=\"$info[titulo]\"/>
+										<div class=\"form-group col-md-6\">
+											<label>Actualizar Imagen</label>
+											<input type=\"file\" name=\"imagenM\"/ >
+										</div>
+										<div class=\"form-group col-md-3\"><img src=\"../imagenes/$info[url]\" width=\"150\"/> </div>
+									</div>
+								</div>";
+							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacionM\"/>$info[informacion]</textarea></div>";
 						?>
 							<div class="panel-footer">
 								<button type="submit" name="BtnAct" value="mision" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>
@@ -151,12 +174,22 @@
 						</div>						
 						<div class="panel panel-info">
 						<?php
-							include("../procesos/conexion.php");
-							$consulta = "SELECT * FROM informacion";
+							$consulta = "SELECT * FROM vision";
 							$resultado = $mysqli->query($consulta);
 							$info=$resultado->fetch_assoc();
-							echo "<div class=\"panel-heading col-md-12\"><label>Visión:</label></br><input class=\"col-md-5\" name=\"titulo\" value=\"$info[titulo]\"required/></div>";
-							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacion\"required/>$info[informacion]</textarea></div>";
+							
+							echo "<div class=\"panel-heading col-md-12\">
+									 <label>Visión:</label></br>
+									 <div class=\"row\">
+										 <input class=\"col-md-3\" name=\"tituloV\" value=\"$info[titulo]\"/>
+										 <div class=\"form-group col-md-6\">
+											 <label>Actualizar Imagen</label>
+											 <input type=\"file\" name=\"imagenV\"/>
+										 </div>
+										 <div class=\"form-group col-md-3\"><img src=\"../imagenes/$info[url]\" width=\"150\"/> </div>
+									</div>
+								</div>";
+							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacionV\"/>$info[informacion]</textarea></div>";
 						?>
 							<div class="panel-footer">
 								<button type="submit" name="BtnAct" value="vision" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>

@@ -225,7 +225,7 @@ a.btn-cta {
 }
 #servicios hr{
 	color:red;
-	    border-width: 5px;
+	border-width: 5px;
 	
 }
 
@@ -233,6 +233,10 @@ a.btn-cta {
 	text-align:center;
 	background-image:url(../../imagenes/shadows.png);
 	background-size:100%;
+	background-repeat:no-repeat;
+}
+#procedimientos H4, p{
+	color:#999;
 }
 
 /*NOTICIAS!==================*/
