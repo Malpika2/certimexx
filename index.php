@@ -138,7 +138,7 @@
 </div>
 
 <!-- =====================================================================CONOZCANOS seccion========================= --->
-   <section id="acerca"   style=" padding:0% 0% 0% 0%; background-color: rgba(255, 255, 255, 1); background-image:url(imagenes/marcohojas.png); background-repeat:round;">
+   <section id="acerca"   style=" padding:0% 0% 0% 0%; background-color: rgba(255, 255, 255, 1);">
 	<div class="kontainer klearfix">
 		<div id="ditto-slider" class="carousel fade" data-ride="carousel" style="padding:5% 0% 0% 0%">
 				<div id="carousel-indicator-container">
@@ -285,7 +285,7 @@
 		<div id="content" class="grid_12 destination-up" page-slide="4">
 			<h2><b>SERVICIOS</b></h2>
 			<hr>
-					<div id="slider1" style="height:400px; background-color:#eee; padding-top:1%">
+					<div id="slider1" style="height:400px; background-color:#FFFF; padding-top:1%">
 						<a class="buttons prev" href="#">&#60;</a>
 						<div class="viewport" style="height:500px">
 							<ul class="overview">
@@ -365,9 +365,9 @@
  <section id="procedimientos" class="services bg-primary" style="background-color:green">
         <div class="container" style="padding:2% 0% 1% 0%">
             <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1" style="background-color:">
+                <div class="col-lg-10 col-lg-offset-1">
                     <h2>PROCEDIMIENTOS</h2>
-					<p class="intro">Contribuye a la conservación y mejoramiento de los recursos naturales y el medio ambiente.</p>
+					<strong>Contribuye a la conservación y mejoramiento de los recursos naturales y el medio ambiente.</strong>
                     <hr class="small">
                     <div class="row" style="background-color:white">
                         <div class="col-md-3 col-sm-6">
@@ -501,12 +501,12 @@
 								<li>
 									<a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
 								</li>
-								<li>
+								<!--<li>
 									<a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
 								</li>
 								<li>
 									<a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-								</li>
+								</li>-->
 							</ul>
 						</div>
 						<div class="item item-3 col-md-3 col-sm-3 col-sx-6">
