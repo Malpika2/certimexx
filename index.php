@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
@@ -130,11 +130,7 @@
 			<a class="right carousel-control" href="#myCarousel" data-slide="next">
             <span class="icon-next"></span>
 			</a>
-						
-
-        </div>		
-		<div>	
-</div>
+        </div>	
 </div>
 
 <!-- =====================================================================CONOZCANOS seccion========================= --->
@@ -294,62 +290,16 @@
 									$sql = "SELECT * FROM servicios";
 									$servicios= $mysqli->query($sql);
 									while($fila = $servicios->fetch_row()){
+										$titulo=strtoupper($fila[1]);
 										echo"<li><div>
 														<div><img class=\"imagen-centro\" src=\"img_servicios/$fila[3]\" alt=\"image\"</div>
-														<div><h3 class=\"item-title\">$fila[1]</h3></div>
+														<div><h3 class=\"item-title\">$titulo</h3></div>
 														<div style=\"height:100px; overflow:scroll\"><p  class=\"sz-content\">$fila[2]</p></div>
 														<div><img class=\"imagen-centro\" style=\"width:100%\" src=\"Imagenes/cestoinf.png\" alt=\"image\"></div>
 										
 										</div></li>";
 									}
 								?>
-								<li>
-									<div>
-										<div>
-											<img class="imagen-centro" src="Imagenes/figure-1.png" alt="image">
-										</div><!--//figure-holder-->
-										<div><h3 class="item-title">solicitud electronica</h3></div>
-										<div style="height:100px; overflow=scroll">
-											<p  class="sz-content">¿Quieres certificarte con CERTIMEX en linea?</p>
-										</div><!--//item-desc-->
-										<div><img class="imagen-centro" style="width:100%" src="Imagenes/cestoinf.png" alt="image"></div>
-									</div><!--//item-inner-->
-								</li>
-								<li>
-									<div>
-										<div>
-											<img class="imagen-centro" src="Imagenes/figure-2.png" alt="image">
-										</div><!--//figure-holder-->
-										<div><h3 class="item-title">proyectos certificados</h3></div>
-										   <div style="height:100px; overflow=scroll">
-											<a  class="sz-content" href="http://www.certimexsc.com/operadores.php">Conoce los operadores certificados por CERTIMEX</a>
-											</div><!--//item-desc-->
-										<div><img class="imagen-centro" style="width:100%" src="Imagenes/cestoinf.png" alt="image"></div>
-									</div><!--//item-inner-->
-								</li>
-								<li>
-									<div><div>
-											<img class="imagen-centro" src="Imagenes/figure-3.png" alt="image">
-										</div><!--//figure-holder-->
-										<div><h3 class="item-title">presupuesto aprox</h3></div>
-										  <div style="height:100px; overflow=scroll">
-											<p class="sz-content">eCertimex: Módulo de cálculo de presupuestos</p>
-										</div><!--//item-desc-->
-										<div><img class="imagen-centro" style="width:100%" src="Imagenes/cestoinf.png" alt="image"></div>
-									</div><!--//item-inner-->
-								</li>
-								<li>
-									<div>
-										<div>
-											<img class="imagen-centro" src="Imagenes/figure-1.png" alt="image">
-										</div><!--//figure-holder-->
-										<div><h3 class="item-title">programa de</h3></div>
-										   <div style="height:100px; overflow=scroll">
-											<p class="sz-content">lorem lorem lorem lorem</p>
-										</div><!--//item-desc-->
-										<div><img class="imagen-centro" style="width:100%" src="Imagenes/cestoinf.png" alt="image"></div>
-									</div><!--//item-inner-->
-								</li>
 							</ul>
 						</div>
 						<a class="buttons next" href="#">&#62;</a>
@@ -431,27 +381,119 @@
 	
 	<!-- =========================  NOTICIAS SECCION ============ -->
 <section id="ultimasn" class="ultimasn">
-           <div id="ultimasn" class="ultimasn">
+        <div id="ultimasn" class="ultimasn">
         <div class="container text-center">
-				<div class="col-md-12" style="padding-top:1%">
-                    <div class="panel panel-default" style="background-color:rgba(50, 48, 49, 0.0);">
-                        <div class="panel-heading" style="background-color:rgba(0, 0, 0, 0.4);">
+				<div class="col-md-12" style="padding-top:2%">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color:rgba(0, 0, 0, 0.9);">
 							<h2 class="section-title" style="color:white">ULTIMAS NOTICIAS</h2>
                         </div>
+						
+						<!--===NUEVA SECCION NOTICIAS">>>-->
+							<div class="row">
+								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+									<div class="">
+											<div id="myCarousel2" class="carousel slide">
+												<!-- Indicators -->
+												<!-- Wrapper for Slides -->
+												<div class="carousel-inner">
+													<?php
+																	$consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC LIMIT 5";
+																	$resultado= $mysqli->query($consulta);
+																	$resultado= $mysqli->query($consulta);
+																	$conta=1;
+																	while($fila=$resultado->fetch_row()){
+																		if($conta<=1){
+																			$clase="\"item active\"";
+																		}else{$clase="\"item\"";}
+																		$contenido=substr($fila[4],0,81);
+																		echo "<div class=$clase>";
+																			echo "<div class=\"fill\" style=\" height:300px;background-image:url(certimexx/$fila[3]); background-repeat: no-repeat; background-size:cover;></div>";
+																			echo "<div class=\"carousel-caption\">";
+																			echo "<div class=\"text-center\" style=\"padding-top:27%\">";	
+																				echo "<div style=\"background-color:rgba(13, 13, 13, .7)\"><h3><b>$fila[1]</b></h3>";
+																				echo "<p>$contenido...</p>";
+																				echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><button type=\"submit\" class=\"btn btn-success\" formtarget=\"_blank\">Leer Más</button>";
+																				echo "<div class=\"\"><input class=\"\" name=\"id_noticias\" value=\"$fila[0]\" type=\"hidden\"/></div></form>";
+																				echo "</div></div>";
+																				echo "</div>";
+																		echo "</div>";
+																	$conta++;
+																	}
+																	
+																?>        
+													<div class="left carousel-control"href="#myCarousel2" data-slide="prev">
+													<span class="icon-prev"></span>
+													</div>
+													<a class="right carousel-control" href="#myCarousel2" data-slide="next">
+													<span class="icon-next"></span>
+													</a>
+												</div>	
+										</div>
+									</div>
+									<div class="">
+										<div class="table-responsive">
+											<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+												<thead>
+													<tr>
+														<ol class="carousel-indicators">
+														<?php
+														include("Procesos/conexion.php");
+														$consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC LIMIT 5";
+														$resultado= $mysqli->query($consulta);
+														$to=0;
+														//echo "<th><li data-target=\"#myCarousel2\" data-slide-to=\"0\" class=\"active\"></li></th>";
+														while($fila = $resultado->fetch_row()){
+															echo "<th><li data-target=\"#myCarousel2\" data-slide-to=\"$to\"><img src=\"certimexx/$fila[3]\"/></li></th>";
+															$to++;
+														} 
+														?> 
+														</ol>
+													</tr>
+												</thead>
+											</table>
+										</div>
+									</div>
+										
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="table-responsive">
+										<table class="table table-bordered table-hover" id="dataTables-example">
+											<thead><tr>
+												<th>Noticias Recientes</th></tr>
+											</thead>
+											<tbody>
+											<?php
+												include("Procesos/conexion.php");
+												$consulta="SELECT id_noticias,titulo,fecha FROM noticias ORDER BY fecha DESC";
+												$resultado= $mysqli->query($consulta);
+												
+												while($fila = $resultado->fetch_row()){
+													echo "<tr><td><div style='width:200px; overflow:hidden; text-align:center;'> <a href=\"#$fila[0]\">$fila[1]</a></div></td></tr>";
+														
+												}
+										?> 
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						<!--/nueva-
+						
                         <div class="panel-body">
 							<div class="table-responsive">
 								<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 								<thead>
 									<tr>
 										<?php
-												include("Procesos/conexion.php");
-												$consulta="SELECT id_noticias,titulo,fecha FROM noticias ORDER BY fecha DESC";
-												$resultado= $mysqli->query($consulta);
+												// include("Procesos/conexion.php");
+												// $consulta="SELECT id_noticias,titulo,fecha FROM noticias ORDER BY fecha DESC";
+												// $resultado= $mysqli->query($consulta);
 												
-												while($fila = $resultado->fetch_row()){
-													echo "<th><div style='width:200px; overflow:hidden; text-align:center;'> <a href=\"#$fila[0]\" data-toggle=\"tab\">$fila[1]</a></div> </th>";
+												// while($fila = $resultado->fetch_row()){
+													// echo "<th><div style='width:200px; overflow:hidden; text-align:center;'> <a href=\"#$fila[0]\" data-toggle=\"tab\">$fila[1]</a></div> </th>";
 														
-												}
+												// }
 										?> 
 									</tr>
 								</thead>
@@ -461,67 +503,32 @@
 							</div>
 							<div class="tab-content">
 								<?php
-										$consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC";
-										$resultado= $mysqli->query($consulta);
-										while($fila = $resultado->fetch_row()){
-											$contenido=substr($fila[4],0,100);
+										// $consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC";
+										// $resultado= $mysqli->query($consulta);
+										// while($fila = $resultado->fetch_row()){
+											// $contenido=substr($fila[4],0,100);
 											
-											echo "<div class=\"tab-pane fade cont-not\" id=\"$fila[0]\">";
-												echo "<div class=\"\"><h2> $fila[1]</h2></div>";
-												echo "<div class=\"row\">
-														  <div class=\"col-md-6 col-sm-6 col-xs-6\" width=\"300px\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" height=\"100%\"style=\"padding:5% 0% 5% 5%;\"/></div>";
-													echo "<div class=\"col-md-6 col-sm-6 col-xs-6\" style=\height:40%; overflow:hidden; text-overflow:ellipsis;\"><p align=\"justify\" style=\"padding:0% 5% 0% 0%;\">$fila[2]</br>$contenido ...</p>";
-												    echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><button type=\"submit\" class=\"btn btn-success\" formtarget=\"_blank\">Leer Más</button></div>
-													</div>";
-												echo "<div class=\"\"><input class=\"\" name=\"id_noticias\" value=\"$fila[0]\" type=\"hidden\"/></div></form>";
-											echo "</div>"; 
-										}
+											// echo "<div class=\"tab-pane fade cont-not\" id=\"$fila[0]\">";
+												// echo "<div class=\"\"><h2> $fila[1]</h2></div>";
+												// echo "<div class=\"row\">
+														  // <div class=\"col-md-6 col-sm-6 col-xs-6\" width=\"300px\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" height=\"100%\"style=\"padding:5% 0% 5% 5%;\"/></div>";
+													// echo "<div class=\"col-md-6 col-sm-6 col-xs-6\" style=\height:40%; overflow:hidden; text-overflow:ellipsis;\"><p align=\"justify\" style=\"padding:0% 5% 0% 0%;\">$fila[2]</br>$contenido ...</p>";
+												    // echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><button type=\"submit\" class=\"btn btn-success\" formtarget=\"_blank\">Leer Más</button></div>
+													// </div>";
+												// echo "<div class=\"\"><input class=\"\" name=\"id_noticias\" value=\"$fila[0]\" type=\"hidden\"/></div></form>";
+											// echo "</div>"; 
+										// }
 								?>	
 							</div>
-                        </div> <!-- /panel-body-->
+                        </div> < /panel-body-->
                     </div>
                 </div>
 							
         </div><!--//container-->
     </div><!--//ULTIMAS NOTICIAS SECCION-->
     </section> 
-	
-	<section id="contacto" class="contacto-section" style="padding:10% 0% 0% 0%">
-		<div id="contacto" class="contacto-section">
-			<div class="container" style="background-image: url(Imagenes/.png); background-size:100% 100%; padding:0% 0% 1% 0%">
-				<h2 class="section-title">Contáctanos</h2>
-				   
-						<div class="item item-3 col-md-3 col-sm-3 col-xs-6" >
-							<p> Direccion</p>
-							<p>Calle 16 de Septiembre 204, Colonia Ejido Guadalupe Victoria, Oaxaca de Juárez, Oaxaca, México.</p>
-						
-						</div>
-						<div class="item item-3 col-md-3 col-sm-3 col-xs-6" >
-						 <ul class="list-inline">
-								<li>
-									<a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-								</li>
-								<!--<li>
-									<a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-								</li>-->
-							</ul>
-						</div>
-						<div class="item item-3 col-md-3 col-sm-3 col-sx-6">
-							<p>Telefono</p>
-							<p>01 951 520 2687 - 01 951 520 0617</p>
-						</div>
-						<div class="item item-3 col-md-3 col-sm-3 col-sx-6" >
-							<p> Correo </p>
-							<p>Certimex@certimexsc.com</p>
-						</div>  
-				</div><!--//container-->
-		</div>
-		
-		
-<div class="panel-group" id="accordion">
+	<section>
+		<div class="panel-group" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -574,6 +581,65 @@
     </div>
   </div>
 </div> 
+	</section>
+	<section id="contacto" class="contacto-section" style="padding:0% 0% 0% 0%">
+		<div id="contacto" class="contacto-section">
+			<div class="container" style="background-image: url(Imagenes/.png); background-size:100% 100%; padding:0% 0% 1% 0%">
+				<h2 class="section-title">Contáctanos</h2>
+				<hr>
+				<div class="row">
+				
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						 <form class="form-horizontal" name="enviarcorreo" method="POST" action="Procesos/correo.php">
+							<div class="form-group">
+								<div>$nota</div>
+								<label for="name">Nombre</label>
+								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required/>
+							</div>
+							<div class="form-group">
+								<label for="email">Correo</label>
+								<input type="text" class="form-control" id="email" name="email" placeholder="correo Electrónico" required/> 
+							</div>
+							<div class="form-group">
+								<label for="mensaje">Mensaje</label>
+								<textarea class="form-control" id="mensaje" name="mensaje" placeholder="Escriba su mensaje" required></textarea>
+							</div>
+							<button type="submit" class="btn btn-success">Enviar Mensaje</button>
+						 </form>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="row">
+						<ul class="list-inline">
+							<li>
+								<div class="col-xs-12 col-sm-12 col-md-12">
+									<p> Direccion</p>
+									<p>Calle 16 de Septiembre 204, Colonia Ejido Guadalupe Victoria, Oaxaca de Juárez, Oaxaca, México.</p>
+								</div>
+							</li>
+							<li>
+								<div class="col-xs-12 col-sm-12 col-md-12" >
+									<p>Telefono</p>
+									<p>01 951 520 2687 - 01 951 520 0617</p>
+								</div>
+							</li>
+							<li>
+								<div class="col-xs-12 col-sm-12 col-md-12">
+									<p> Correo </p>
+									<p>Certimex@certimexsc.com</p>
+								</div>
+							</li>
+							<li>
+							<div class="col-xs-12 col-sm-12 col-md-12">
+									<a href="https://www.facebook.com/certimex.certificadoramexicana" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a>
+							</div>
+							</li>
+						</ul>
+					</div>
+					</div>
+			   
+				</div>
+			</div><!--//container-->
+		</div>
     </section> 
     <!-- Footer -->
     <footer>
@@ -593,20 +659,20 @@
 		$('#slider1').tinycarousel();
 	});
 	</script>
-            <script>
-     
-            function Validar(user, pass)
-            {
-                $.ajax({
-                    url: "Procesos/validar.php",
-                    type: "POST",
-                    data: "user="+user+"&pass="+pass,
-                    success: function(resp){
-                    $('#resultado').html(resp)
-                    }       
-                });
-            }
-            </script>
+	<script>
+
+	function Validar(user, pass)
+	{
+		$.ajax({
+			url: "Procesos/validar.php",
+			type: "POST",
+			data: "user="+user+"&pass="+pass,
+			success: function(resp){
+			$('#resultado').html(resp)
+			}       
+		});
+	}
+	</script>
        
 </body>
 </html> 

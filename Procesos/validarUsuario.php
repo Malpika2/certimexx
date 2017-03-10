@@ -19,7 +19,6 @@ if ($resultado->num_rows === 0) { //No se encuentran coincidencias
       $_SESSION['errorMessage'] = 1;
       header("Location:../index.php");
       exit();   
-   exit;
 }
 else{
 	$usuario = $resultado->fetch_assoc();

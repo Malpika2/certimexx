@@ -9,7 +9,7 @@ $id_servicios = $_POST['id_servicios'];
 
 
 if($boton = $_POST['Btnser']== 'actualizar'){
-			$consulta="UPDATE servicios SET nombre='$nombre',descripcion='$descripcion' WHERE servicios.id_servicios = '$id_servicios'";
+			$consulta="UPDATE servicios SET nombre='$nombre',descripcion='$descripcion' WHERE servicios.id_servicio = '$id_servicios'";
 			$resultado= $mysqli->query($consulta);
 			if(!$mysqli->query($consulta)){
 				echo "error de update: $mysqli->error";
@@ -18,7 +18,7 @@ if($boton = $_POST['Btnser']== 'actualizar'){
 	}
 	
 	if($boton = $_POST['Btnser'] == 'eliminar'){
-		$consulta="DELETE FROM servicios WHERE servicios.id_servicios = '$id_servicios'";
+		$consulta="DELETE FROM servicios WHERE servicios.id_servicio = '$id_servicios'";
 		$resultado= $mysqli->query($consulta);
 		header("Location:../Admin/servicios.php");
 	}

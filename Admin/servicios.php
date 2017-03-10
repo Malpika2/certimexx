@@ -166,7 +166,7 @@
 									
 										include("../Procesos/conexion.php");
 										$directory="assets/img_servicios/";
-										$consulta="SELECT id_servicios,nombre,descripcion,imagen FROM servicios";
+										$consulta="SELECT id_servicio,nombre,descripcion,imagen FROM servicios";
 										$resultado= $mysqli->query($consulta);
 										$dirint = dir($directory);
 										while($fila = $resultado->fetch_row()){
@@ -179,7 +179,6 @@
 													echo"<div class=\"form-group\"><button type=\"submit\" name=\"Btnser\" value=\"actualizar\" class=\"btn btn-default\"><i class=\" fa fa-refresh \"></i> Actualizar</button>";
 													echo"          				   <button type=\"submit\" name=\"Btnser\" value=\"eliminar\" class=\"btn btn-danger\"><i class=\"fa fa-pencil\"></i> Eliminar</button></div>";
 													echo"<div class=\"form-group\"><input class=\"form-control\" name=\"id_servicios\" value=\"$fila[0]\" type=\"hidden\"/></div>";
-													
 													echo"</form>";
 											echo"</div>";
 										}
@@ -199,7 +198,7 @@
 												<tbody>
 												<?php
 													include ("../Procesos/conexion.php");
-													$consulta="SELECT id_servicios,nombre,descripcion FROM servicios";
+													$consulta="SELECT id_servicio,nombre,descripcion FROM servicios";
 													$resultado= $mysqli->query($consulta);
 													
 													while($fila = $resultado->fetch_row()){
