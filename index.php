@@ -385,8 +385,8 @@
         <div class="container text-center">
 				<div class="col-md-12" style="padding-top:2%">
                     <div class="panel panel-default">
-                        <div class="panel-heading" style="background-color:rgba(0, 0, 0, 0.9);">
-							<h2 class="section-title" style="color:white">ULTIMAS NOTICIAS</h2>
+                        <div class="panel-heading" style="background-color:rgba(0, 0, 0, 0.0);">
+							<h2 class="section-title" style="color:black">ULTIMAS NOTICIAS</h2>
                         </div>
 						
 						<!--===NUEVA SECCION NOTICIAS">>>-->
@@ -398,7 +398,7 @@
 												<!-- Wrapper for Slides -->
 												<div class="carousel-inner">
 													<?php
-																	$consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC LIMIT 5";
+																	$consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC LIMIT 4";
 																	$resultado= $mysqli->query($consulta);
 																	$resultado= $mysqli->query($consulta);
 																	$conta=1;
@@ -408,15 +408,21 @@
 																		}else{$clase="\"item\"";}
 																		$contenido=substr($fila[4],0,81);
 																		echo "<div class=$clase>";
-																			echo "<div class=\"fill\" style=\" height:300px;background-image:url(certimexx/$fila[3]); background-repeat: no-repeat; background-size:cover;></div>";
-																			echo "<div class=\"carousel-caption\">";
-																			echo "<div class=\"text-center\" style=\"padding-top:27%\">";	
-																				echo "<div style=\"background-color:rgba(13, 13, 13, .7)\"><h3><b>$fila[1]</b></h3>";
-																				echo "<p>$contenido...</p>";
-																				echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><button type=\"submit\" class=\"btn btn-success\" formtarget=\"_blank\">Leer Más</button>";
-																				echo "<div class=\"\"><input class=\"\" name=\"id_noticias\" value=\"$fila[0]\" type=\"hidden\"/></div></form>";
-																				echo "</div></div>";
-																				echo "</div>";
+																			echo "<div class=\"fill not-fill\" style=\"background-image:url(certimexx/$fila[3]);\"></div>";
+																			echo "<div class=\"carousel-noti\">";
+																				echo "<div class=\"text-center\">";	
+																					echo "<div style=\"background-color:rgba(13, 13, 13, .8); position:inherit;\" >
+																								<h3><b>$fila[1]</b></h3>";
+																								echo "<p>$contenido...</p>";
+																								echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\">
+																											<button type=\"submit\" class=\"btn btn-success\" formtarget=\"_blank\">Leer Más</button>";
+																											echo "<div class=\"\">
+																														<input class=\"\" name=\"id_noticias\" value=\"$fila[0]\" type=\"hidden\"/>
+																												  </div>
+																									</form>";
+																					echo "</div>
+																					</div>";
+																			echo "</div>";
 																		echo "</div>";
 																	$conta++;
 																	}
@@ -431,30 +437,19 @@
 												</div>	
 										</div>
 									</div>
-									<div class="">
-										<div class="table-responsive">
-											<table class="table table-striped table-bordered table-hover" id="dataTables-example">
-												<thead>
-													<tr>
-														<ol class="carousel-indicators">
+														<ol class="carousel-indicators2">
 														<?php
 														include("Procesos/conexion.php");
-														$consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC LIMIT 5";
+														$consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC LIMIT 4";
 														$resultado= $mysqli->query($consulta);
 														$to=0;
-														//echo "<th><li data-target=\"#myCarousel2\" data-slide-to=\"0\" class=\"active\"></li></th>";
+														//echo "<th><li class=\"ind-active\" data-target=\"#myCarousel2\" data-slide-to=\"0\" ><img src=\"\"/></li></th>";
 														while($fila = $resultado->fetch_row()){
-															echo "<th><li data-target=\"#myCarousel2\" data-slide-to=\"$to\"><img src=\"certimexx/$fila[3]\"/></li></th>";
+															echo "<li data-target=\"#myCarousel2\" data-slide-to=\"$to\"><img src=\"certimexx/$fila[3]\"/></li>";
 															$to++;
 														} 
 														?> 
 														</ol>
-													</tr>
-												</thead>
-											</table>
-										</div>
-									</div>
-										
 								</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<div class="table-responsive">
@@ -647,7 +642,7 @@
     </footer>
      
     <!-- Javascript -->          
-	
+	 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>     
@@ -659,8 +654,17 @@
 		$('#slider1').tinycarousel();
 	});
 	</script>
+<script>
+      $(function() {
+       $('.carousel-indicators2 li img').click(function(e) {
+           e.preventDefault();
+           var $this = $(this);
+           $this.closest('ol').children('li').removeClass('ind-active');
+           $this.parent().addClass('ind-active');
+       });
+      });
+   </script>
 	<script>
-
 	function Validar(user, pass)
 	{
 		$.ajax({

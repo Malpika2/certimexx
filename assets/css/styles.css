@@ -244,29 +244,39 @@ a.btn-cta {
 	height:650px;
 	
 }
-#ultimasn th{
-	background-color:rgba(0, 0, 0, 0.48);
+.carousel-indicators2{
+	border: 1px solid #eee;
+    padding: 0px 0 1px;
+    position: static;
+    overflow: hidden;
+	list-style:none;
+	bottom: -40px;
+text-align: center;
 }
-#ultimasn .cont-not{
-	background-color:rgba(0, 0, 0, 0.4);
-}
-#ultimasn a:link{
-	color:#18e118;
-}
-/* visited link */
-#ultimasn a:visited {
-    color:red;
+.carousel-indicators2 li{
+width: 20%;
+float: left;
+margin: 0 2.3%;
+padding: 5px 0 0;
+display: inline-block;
+line-height: 20px;
 }
 
+#ultimas a{
+	color:green;
+}
+#ultimasn a:link, a:visited {
+  color: green;
+}
+#ultimas a.current:link, a.current:visited {
+  color: white;
+  background-color: blue;
+}
 /* mouse over link */
 #ultimasn a:hover {
     color: green;
 }
 
-/* selected link */
-#ultimasn a:active {
-    color: hotpink;
-}
 #ultimasn h3{
 	color:#18e118;
 	font-family: 'Montserrat', sans-serif;
@@ -280,7 +290,39 @@ a.btn-cta {
 	margin:0%;
 	width:97%;
 }
+#ultimasn .not-fill{
+	height:400px;
+	background-repeat: no-repeat; 
+	background-size:cover;
+	
+}
+.carousel-noti{
+right:0%;
+left: 0%;
+position: absolute;
+bottom: 0px;
+z-index: 10;
+padding-top: 20px;
+color: #fff;
+text-align: center;
+text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
 
+#ultimasn .ind-active img{    
+	background:green;
+	background: url("../../Imagenes/thumb-active.png") no-repeat;
+	background-size: cover;
+	margin-top: -4%;
+	padding-top: 8%;
+}
+#ultimasn img{
+	width: 100%;
+    display: block;
+    opacity: 1;
+    background: #eee;
+    padding: 4%;
+    cursor: pointer;
+}
 
 
 /* ====== Footer ====== */
