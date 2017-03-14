@@ -3,7 +3,7 @@
 
 	$carpeta = "../Imagenes_Noticias/";
 	
-	$titulo =$_POST['titulo']);
+	$titulo =$_POST['titulo'];
 	$contenido = $_POST['contenido'];
 	$fecha = $_POST['fecha'];
 	

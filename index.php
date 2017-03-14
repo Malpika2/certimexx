@@ -13,6 +13,14 @@
     <link rel="shortcut icon" href=".ico">  
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.css">
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+	<script src="js/table.js"></script>
+	
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="table.js"></script>
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <!-- Theme CSS -->
@@ -384,8 +392,8 @@
         <div id="ultimasn" class="ultimasn">
         <div class="container text-center">
 				<div class="col-md-12" style="padding-top:2%">
-                    <div class="panel panel-default">
-                        <div class="panel-heading" style="background-color:rgba(0, 0, 0, 0.0);">
+                    <div class="panel panel-default" style="border:0px">
+                        <div class="panel-heading" style="background-color:rgba(0, 0, 0, 0.0); border:0px">
 							<h2 class="section-title" style="color:black">ULTIMAS NOTICIAS</h2>
                         </div>
 						
@@ -453,19 +461,25 @@
 								</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<div class="table-responsive">
-										<table class="table table-bordered table-hover" id="dataTables-example">
-											<thead><tr>
-												<th>Noticias Recientes</th></tr>
+										<!--table class="table table-bordered table-hover" id="example"-->
+										<table id="example" class="display table table-bordered" cellspacing="0" width="100%" >
+											<thead>
+												<tr>
+												<th>CERTIMEX</th>
+												<th>Noticias Recientes</th>
+												</tr>
 											</thead>
 											<tbody>
 											<?php
 												include("Procesos/conexion.php");
-												$consulta="SELECT id_noticias,titulo,fecha FROM noticias ORDER BY fecha DESC";
+												$consulta="SELECT noticias.id_noticias, noticias.titulo,noticias.fecha, img_noticias.url FROM noticias,img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC";
 												$resultado= $mysqli->query($consulta);
 												
 												while($fila = $resultado->fetch_row()){
-													echo "<tr><td><div style='width:200px; overflow:hidden; text-align:center;'> <a href=\"#$fila[0]\">$fila[1]</a></div></td></tr>";
-														
+													echo "<tr>";
+													echo "<td><div><img src=\"certimexx/$fila[3]\"/></div></td>";
+													echo "<td><div style='width:200px; overflow:hidden; text-align:center;'> <a href=\"#$fila[3]\">$fila[1]</a></div></td>";
+													echo "</tr>";
 												}
 										?> 
 											</tbody>
@@ -522,7 +536,7 @@
         </div><!--//container-->
     </div><!--//ULTIMAS NOTICIAS SECCION-->
     </section> 
-	<section>
+	<section id="directorio" class="contacto-section">
 		<div class="panel-group" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -642,8 +656,6 @@
     </footer>
      
     <!-- Javascript -->          
-	 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>     
     <script type="text/javascript" src="assets/js/main.js"></script> 
@@ -654,7 +666,8 @@
 		$('#slider1').tinycarousel();
 	});
 	</script>
-<script>
+
+	<script>
       $(function() {
        $('.carousel-indicators2 li img').click(function(e) {
            e.preventDefault();
