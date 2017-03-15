@@ -103,7 +103,7 @@
 	    <div id="myCarousel" class="carousel slide" style="padding:0% 0% 0% 0%">
         <!-- Indicators -->
         <!-- Wrapper for Slides -->
-        <div class="carousel-inner" style="background-image:url(imagenes/corn-field-440338_1920.jpg); background-repeat: no-repeat;">
+        <div class="carousel-inner">
             <?php
 							include("Procesos/conexion.php");
 							$consultaCS = "SELECT carrusel.encabezado, carrusel.contenido, carrusel.complemento, imagenes_carrusel.url FROM carrusel, imagenes_carrusel WHERE carrusel.id_carrusel = imagenes_carrusel.id_carrusel"; 
@@ -113,10 +113,10 @@
 								if($conta<=1){
 									$clase="\"item active\"";
 								}else{$clase="\"item\"";}
-								echo "<div class=$clase >";
+								echo "<div class=$clase style=\"background-image:url(certimexx/$fila[3]); background-size:100%; background-repeat:none;\">";
 							echo "<div class=\"fill\">";
 									echo "<div style=\"padding:8% 0% 0% 0% ; \"><h2 style=\"color:#0CE201; background-color:rgba(13, 13, 13, .4); font-size:34px; text-align:center;\"><b>$fila[0]</b></h2></div>
-										<div style=\"height:600px;\"><img class=\"img-responsive\" style=\"width:100%; height:100%;\" src=\"certimexx/$fila[3]\" /></div></div>";
+										  </div>";
 									echo "<div class=\"carousel-caption\">";
 									echo "<div class=\"text-center\"  style=\"background-color:rgba(13, 13, 13, .4)\">";	
 										
@@ -195,7 +195,7 @@
 								$titulo2= strtoupper($fila['titulo']);
 								echo "<div class=\"carousel-image\"><img src=\"imagenes/$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
-								echo nl2br("<p>$fila[contenido]</p>");
+								echo nl2br("<p>$fila[informacion]</p>");
 								echo "</div>";
 								?>	
 						</div>
@@ -212,7 +212,7 @@
 								$titulo2= strtoupper($fila['titulo']);
 								echo "<div class=\"carousel-image\"><img src=\"imagenes/$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
-								echo nl2br("<p>$fila[contenido]</p>");
+								echo nl2br("<p>$fila[informacion]</p>");
 								echo "</div>";
 								?>	
 						</div>
@@ -229,7 +229,7 @@
 								$titulo2= strtoupper($fila['titulo']);
 								echo "<div class=\"carousel-image\"><img src=\"imagenes/$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
-								echo nl2br("<p>$fila[contenido]</p>");
+								echo nl2br("<p>$fila[informacion]</p>");
 								echo "</div>";
 								?>					
 						</div>
@@ -601,7 +601,7 @@
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						 <form class="form-horizontal" name="enviarcorreo" method="POST" action="Procesos/correo.php">
 							<div class="form-group">
-								<div>$nota</div>
+								<div>	</div>
 								<label for="name">Nombre</label>
 								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required/>
 							</div>

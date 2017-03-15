@@ -71,6 +71,7 @@ a.btn-cta {
 }
 /* ======= Header ======= */
 .header {
+  background:rgba(33,33,33,0.9);
   position: fixed;
   width: 100%;
   z-index: 30;
@@ -79,6 +80,7 @@ a.btn-cta {
   -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
+  
 }
 .header.header-scrolled {
   background: #fff;
