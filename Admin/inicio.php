@@ -143,8 +143,8 @@
 															echo"<div class=\"form-group\"><input class=\"form-control\" name=\"encabezado\" value=\"$fila[1]\" required/></div>";
 															echo"<div class=\"form-group\"><img src=\"$fila[4]\" width=\"500\"/> </div>";
 															echo"<div class=\"form-group\"><label>Actualizar Imagen</label><input type=\"file\" name=\"imagen\"/></div>";
-															echo"<div class=\"form-group\"><label>Contenido</label>	<textarea class=\"form-control\" name=\"contenido\" rows=\"3\" required/>$fila[2]</textarea> </div>";
-															echo"<div class=\"form-group\"><label>Complemento</label><input class=\"form-control\" name=\"complemento\" value=\"$fila[3]\" required/></div>";
+															echo"<div class=\"form-group\"><label>Contenido</label>	<textarea class=\"form-control\" name=\"contenido\" rows=\"3\" />$fila[2]</textarea> </div>";
+															echo"<div class=\"form-group\"><label>Complemento</label><input class=\"form-control\" name=\"complemento\" value=\"$fila[3]\" /></div>";
 															echo"<div class=\"form-group\"><button type=\"submit\" name=\"BtnCarr\" value=\"actualizar\" class=\"btn btn-default\"><i class=\" fa fa-refresh \"></i> Actualizar</button>";
 															echo"          				   <button type=\"submit\" name=\"BtnCarr\" value=\"eliminar\" class=\"btn btn-danger\"><i class=\"fa fa-pencil\"></i> Eliminar</button></div>";
 															echo"<div class=\"form-group\"><input class=\"form-control\" name=\"id_carrusel\" value=\"$fila[0]\" type=\"hidden\"/></div>";

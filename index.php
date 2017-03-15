@@ -14,13 +14,10 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     
 	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.css">
+	
 	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-	<script src="js/table.js"></script>
-	
-<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="table.js"></script>
+	<script type="text/javascript" src="table.js"></script>
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <!-- Theme CSS -->
@@ -51,7 +48,7 @@
                     <img width="15%" src="Imagenes/logo-certimex.png" alt="icon-certimex"/>
 				</a>
             </h1><!--//logo-->
-            <nav class="main-nav navbar-right" role="navigation">
+            <nav class="main-nav navbar-right" role="navigation" >
                 <div class="navbar-header">
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -103,10 +100,10 @@
         </div><!--//container-->
     </header><!--//header-->
     
-	    <div id="myCarousel" class="carousel slide" style="padding:5% 0% 0% 0%">
+	    <div id="myCarousel" class="carousel slide" style="padding:0% 0% 0% 0%">
         <!-- Indicators -->
         <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
+        <div class="carousel-inner" style="background-image:url(imagenes/corn-field-440338_1920.jpg); background-repeat: no-repeat;">
             <?php
 							include("Procesos/conexion.php");
 							$consultaCS = "SELECT carrusel.encabezado, carrusel.contenido, carrusel.complemento, imagenes_carrusel.url FROM carrusel, imagenes_carrusel WHERE carrusel.id_carrusel = imagenes_carrusel.id_carrusel"; 
@@ -116,12 +113,14 @@
 								if($conta<=1){
 									$clase="\"item active\"";
 								}else{$clase="\"item\"";}
-								echo "<div class=$clase>";
-									echo "<div class=\"fill\" style=\"background-image:url(certimex/$fila[3]); background-repeat: no-repeat; padding:0% 0% 0% 0%;></div>";
+								echo "<div class=$clase >";
+							echo "<div class=\"fill\">";
+									echo "<div style=\"padding:8% 0% 0% 0% ; \"><h2 style=\"color:#0CE201; background-color:rgba(13, 13, 13, .4); font-size:34px; text-align:center;\"><b>$fila[0]</b></h2></div>
+										<div style=\"height:600px;\"><img class=\"img-responsive\" style=\"width:100%; height:100%;\" src=\"certimexx/$fila[3]\" /></div></div>";
 									echo "<div class=\"carousel-caption\">";
-									echo "<div class=\"text-center\"  style=\"padding:20% 0% 0% 0%;\">";	
-										echo "<div style=\"background-color:rgba(13, 13, 13, .4)\"><h2 style=\"color:#0CE201; padding-top:2%\"><b>$fila[0]</b></br></br></h2></div>";
-										echo "<div style=\"background-color:rgba(13, 13, 13, .3); color:#FFFFFF\" text-align:justify;\" ><h3 >$fila[1]</h3>";
+									echo "<div class=\"text-center\"  style=\"background-color:rgba(13, 13, 13, .4)\">";	
+										
+										echo "<div style=\"color:#FFFFFF\" text-align:justify;\" ><h3 >$fila[1]</h3>";
 										if($fila[2]!=""){
 										echo "<a class=\"btn btn-success \" href=\"$fila[2]\"> Saber más...</a>";}
 										echo "</div></div>";
@@ -196,7 +195,7 @@
 								$titulo2= strtoupper($fila['titulo']);
 								echo "<div class=\"carousel-image\"><img src=\"imagenes/$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
-								echo nl2br("<p>$fila[informacion]</p>");
+								echo nl2br("<p>$fila[contenido]</p>");
 								echo "</div>";
 								?>	
 						</div>
@@ -213,7 +212,7 @@
 								$titulo2= strtoupper($fila['titulo']);
 								echo "<div class=\"carousel-image\"><img src=\"imagenes/$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
-								echo nl2br("<p>$fila[informacion]</p>");
+								echo nl2br("<p>$fila[contenido]</p>");
 								echo "</div>";
 								?>	
 						</div>
@@ -230,7 +229,7 @@
 								$titulo2= strtoupper($fila['titulo']);
 								echo "<div class=\"carousel-image\"><img src=\"imagenes/$fila[url]\" width=\"300\" height=\"200\"></div>";
 								echo "<div style=\"text-align:justify; height:440px; overflow:scroll; overflow-x:hidden;\"><h3>$titulo2</h3>";
-								echo nl2br("<p>$fila[informacion]</p>");
+								echo nl2br("<p>$fila[contenido]</p>");
 								echo "</div>";
 								?>					
 						</div>
@@ -241,7 +240,7 @@
 					<div class="carousel-caption" id="home-slide-1">
 						<div class="grid_12 omega sz-content">
 						
-							<div class="carousel-image"><img src="http://lorempixel.com/300/200/" width="300" height="200"></div>
+							<div class="carousel-image"><img src="Imagenes/valores.jpg" width="300" height="200"></div>
 							<h3>VALORES</h3>
 							<div class="row">
 								<div class="col-xs-6 col-sm-3 col-md-3" style="text-align:justify;">
@@ -462,7 +461,7 @@
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<div class="table-responsive">
 										<!--table class="table table-bordered table-hover" id="example"-->
-										<table id="example" class="display table table-bordered" cellspacing="0" width="100%" >
+										<table id="example" class="display table table-bordered" cellspacing="0" width="99%" >
 											<thead>
 												<tr>
 												<th>CERTIMEX</th>
@@ -478,7 +477,8 @@
 												while($fila = $resultado->fetch_row()){
 													echo "<tr>";
 													echo "<td><div><img src=\"certimexx/$fila[3]\"/></div></td>";
-													echo "<td><div style='width:200px; overflow:hidden; text-align:center;'> <a href=\"#$fila[3]\">$fila[1]</a></div></td>";
+													echo "<td style=\"text-align:justify\"><form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><div style='width:200px;'><button type=\"submit\" style=\"padding-top:10%; font-size:18px; color:green;\" class=\"btn btn-link\" formtarget=\"_blank\">$fila[1]</button></div>
+													<div class=\"\"><input class=\"\" name=\"id_noticias\" value=\"$fila[0]\" type=\"hidden\"/></div></form></td>";
 													echo "</tr>";
 												}
 										?> 

@@ -142,7 +142,7 @@
 									<div class=\"form-group col-md-3\"><img src=\"../imagenes/$info[url]\" width=\"150\"/> </div>
 									</div>
 								</div>";
-							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacionH\"/>$info[informacion]</textarea></div>";
+							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacionH\"/>$info[contenido]</textarea></div>";
 						?>
 							<div class="panel-footer">
 								<button type="submit" name="BtnAct" value="historia" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>
@@ -166,7 +166,7 @@
 										<div class=\"form-group col-md-3\"><img src=\"../imagenes/$info[url]\" width=\"150\"/> </div>
 									</div>
 								</div>";
-							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacionM\"/>$info[informacion]</textarea></div>";
+							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacionM\"/>$info[contenido]</textarea></div>";
 						?>
 							<div class="panel-footer">
 								<button type="submit" name="BtnAct" value="mision" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>
@@ -189,7 +189,7 @@
 										 <div class=\"form-group col-md-3\"><img src=\"../imagenes/$info[url]\" width=\"150\"/> </div>
 									</div>
 								</div>";
-							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacionV\"/>$info[informacion]</textarea></div>";
+							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacionV\"/>$info[contenido]</textarea></div>";
 						?>
 							<div class="panel-footer">
 								<button type="submit" name="BtnAct" value="vision" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>

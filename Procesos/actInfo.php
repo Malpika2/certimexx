@@ -27,7 +27,7 @@
 		$Ntitulo= $_POST['tituloH'];
 		$Info= $_POST['informacionH'];
 		
-		$consulta="UPDATE historia SET titulo='$Ntitulo', informacion='$Info'";
+		$consulta="UPDATE historia SET titulo='$Ntitulo', contenido='$Info'";
 		$resultado= $mysqli->query($consulta);
 		
 		if (!empty($_FILES['imagenH']['tmp_name'])){ //Evalua si hay imagen nueva o no.
@@ -49,7 +49,7 @@
 		$Ntitulo= $_POST['tituloM'];
 		$Info= $_POST['informacionM'];
 		
-		$consulta="UPDATE mision SET titulo='$Ntitulo', informacion='$Info'";
+		$consulta="UPDATE mision SET titulo='$Ntitulo', contenido='$Info'";
 		$resultado= $mysqli->query($consulta);
 		if(!$mysqli->query($consulta)){
 			echo "error de update: $mysqli->error";
@@ -70,7 +70,7 @@
 		$Ntitulo= $_POST['tituloV'];
 		$Info= $_POST['informacionV'];
 		
-		$consulta="UPDATE vision SET titulo='$Ntitulo', informacion='$Info'";
+		$consulta="UPDATE vision SET titulo='$Ntitulo', contenido='$Info'";
 		$resultado= $mysqli->query($consulta);
 		if(!$mysqli->query($consulta)){
 			echo "error de update: $mysqli->error";

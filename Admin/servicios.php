@@ -192,7 +192,7 @@
 												<tr>
 													<th>Fecha</th>
 													<th>Titulo</th>
-													<th>#</th>
+													<th></th>
 												</tr>
 												</thead>
 												<tbody>
@@ -224,7 +224,6 @@
 					
                 </div><!-- /. ROW  -->
             </div><!-- /. PAGE INNER  -->
-		<footer><p>Soporte Técnico.  <a href="#">www.123.com</a></p></footer>
         </div><!-- /. PAGE WRAPPER  -->
     </div>
 
